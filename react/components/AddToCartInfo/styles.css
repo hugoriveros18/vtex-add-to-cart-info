@@ -1,0 +1,18 @@
+.add-to-cart-info__general--container {
+    width  : 485px;
+    margin : 15px;
+    padding: 5px 0px 15px;
+    border : 1px solid #d5d5d5;
+}
+
+@media screen and (max-width: 1024px) {
+    .add-to-cart-info__general--container {
+        width: 385px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .add-to-cart-info__general--container {
+        width: 300px;
+    }
+}
