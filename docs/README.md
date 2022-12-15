@@ -31,8 +31,7 @@ Now, you can use the block exported by the `add-to-cart-info` app.
 #### `add-to-cart-info` blocks
  Block name   | Description  |
 | -------- | ------------------------ | 
-| `add-to-cart-info`     |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) renders a table with a summary of the items added to the cart, the total number of items and the total price of the current order. For another part, two optional buttons: one to redirect the customer to the checkout and other to keep shopping(mainly use when the component is declared in modals).
-.                                      
+| `add-to-cart-info`     |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) renders a table with a summary of the items added to the cart, the total number of items and the total price of the current order. For another part, two optional buttons: one to redirect the customer to the checkout and other to keep shopping(mainly use when the component is declared in modals).                   
 
 ```json
   "store.home": {
