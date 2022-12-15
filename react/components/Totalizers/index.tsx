@@ -26,7 +26,8 @@ const Totalizers = ({products}:Props) => {
     const CSS_HANDLES = [
         "totalizers__container",
         "totalizers__quantity",
-        "totalizers__amount"
+        "totalizers__amount",
+        
     ]
     const handles = useCssHandles(CSS_HANDLES);
 

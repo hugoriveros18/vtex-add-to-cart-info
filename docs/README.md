@@ -1,108 +1,91 @@
-📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
-
-# APP NAME
+# Add To Cart Information
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
-Under the app's name, you should explain the topic, giving a **brief description** of its **functionality** in a store when installed.
+The Add To Cart Information component displays a summary of the current order and is updated when the customer add a new item to the cart. The summary contains information about the products in the cart, total of items and the total price; with two optional buttons: one to go to the checkout and other to continue shopping. It can be declare where it is needed.
 
-Next, **add media** (either an image of a GIF) with the rendered components, so that users can better understand how the app works in practice. 
 
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
+<img src="../react/assets/add-to-cart-info.png" width="auto"/> 
+
 
 ## Configuration 
 
-In this section, you first must **add the primary instructions** that will allow users to use the app's blocks in their store, such as:
+### Step 1 - Adding the Add To Cart Information app to your theme's dependencies
 
-1. Adding the app as a theme dependency in the `manifest.json` file;
-2. Declaring the app's main block in a given theme template or inside another block from the theme.
+In your theme's `manifest.json`, add the Add To Cart Info app as a dependency:
 
-Remember to add a table with all blocks exported by the app and their descriptions. You can verify an example of it on the [Search Result documentation](https://vtex.io/docs/components/all/vtex.search-result@3.56.1/). 
+```json
+  "dependencies": {
+    "vendor.add-to-cart-info": "0.x"
+  }
+```
 
-Next, add the **props table** containing your block's props. 
+### Step 2 - Declaring the block on the page you want it to be displayed
 
-If the app exports more than one block, create several tables - one for each block. For example:
+Now, you can use the block exported by the `add-to-cart-info` app.
 
-### `block-1` props
+#### `add-to-cart-info` blocks
+ Block name   | Description  |
+| -------- | ------------------------ | 
+| `add-to-cart-info`     |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) renders a table with a summary of the items added to the cart, the total number of items and the total price of the current order. For another part, two optional buttons: one to redirect the customer to the checkout and other to keep shopping(mainly use when the component is declared in modals).
+.                                      
+
+```json
+  "store.home": {
+    "blocks": [
+        "responsive-layout.desktop"
+    ]
+  },
+  "responsive-layout.desktop": {
+    "children": [
+        "add-to-cart-info"
+    ]
+  }
+```
+
+### Step 2 - Defining the props that the component will have
+
+Check all props to configure the block in the table below:
+
+### `add-to-cart-info` props
 
 | Prop name    | Type            | Description    | Default value                                                                                                                               |
 | ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-
-### `block-2` props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-Prop types are: 
-
-- `string` 
-- `enum` 
-- `number` 
-- `boolean` 
-- `object` 
-- `array` 
-
-When documenting a prop whose type is `object` or `array` another prop table will be needed. You can create it following the example below:
-
-- `propName` object:
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-
-Remember to also use this Configuration section to  **showcase any necessary disclaimer** related to the app and its blocks, such as the different behavior it may display during its configuration. 
-
-## Modus Operandi *(not mandatory)*
-
-There are scenarios in which an app can behave differently in a store, according to how it was added to the catalog, for example. It's crucial to go through these **behavioral changes** in this section, allowing users to fully understand the **practical application** of the app in their store.
-
-If you feel compelled to give further details about the app, such as it's **relationship with the VTEX admin**, don't hesitate to use this section. 
+| `diplayCheckoutButton`      | `boolean`       | The diplayCheckoutButton parameter renders a button that redirect the customer to the checkout when its value is 'true' | `false`        |
+| `diplayShoppingButton`      | `boolean`       | The diplayShoppingButton parameter renders a button that scroll the page to the top when its value is 'true'. This prop is highly recommended to be use when the `add-to-cart-info` block is declared in a modal layout  | `false`        |
 
 ## Customization
 
-The first thing that should be present in this section is the sentence below, showing users the recipe pertaining to CSS customization in apps:
-
-`In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).`
-
-Thereafter, you should add a single column table with the available CSS handles for the app, like the one below. Note that the Handles must be ordered alphabetically.
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
 | CSS Handles |
 | ----------- | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` |
-
-
-If there are none, add the following sentence instead:
-
-`No CSS Handles are available yet for the app customization.`
+| `add-to-cart-info__general--container` | 
+| `totalizers__container` | 
+| `totalizers__quantity` | 
+| `productGroup__general--container` | 
+| `productGroup__container` | 
+| `productGroup__image--container` |
+| `productGroup__image` |
+| `productGroup__info--container` |
+| `productGroup__info--name` |
+| `productGroup__info--price` |
+| `productGroup__info--quantity` |
+| `order__buttons--container` |
+| `order__checkout--container` |
+| `order__checkout--button` |
+| `order__shopping--container` |
+| `order__shopping--button` |
 
 <!-- DOCS-IGNORE:start -->
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people:
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
-
-<!-- DOCS-IGNORE:end -->
+1. Hugo Felipe Riveros Fajardo
 
 ---- 
 
