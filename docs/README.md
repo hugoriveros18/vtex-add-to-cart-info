@@ -20,7 +20,7 @@ In your theme's `manifest.json`, add the Add To Cart Info app as a dependency:
 
 ```json
   "dependencies": {
-    "vendor.add-to-cart-info": "0.x"
+    "itgloberspartnercl.add-to-cart-info": "0.x"
   }
 ```
 
